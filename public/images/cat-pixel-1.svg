@@ -1,0 +1,33 @@
+<svg
+  width="64"
+  height="48"
+  viewBox="0 0 16 12"
+  xmlns="http://www.w3.org/2000/svg"
+  shape-rendering="crispEdges"
+>
+  <rect width="16" height="12" fill="none" />
+
+  <!-- tail -->
+  <rect x="1" y="5" width="1" height="1" fill="#60A5FA" />
+  <rect x="2" y="4" width="1" height="1" fill="#60A5FA" />
+  <rect x="3" y="4" width="1" height="1" fill="#60A5FA" />
+
+  <!-- body -->
+  <rect x="4" y="4" width="6" height="4" fill="#93C5FD" />
+
+  <!-- head -->
+  <rect x="10" y="3" width="4" height="4" fill="#93C5FD" />
+
+  <!-- ears -->
+  <rect x="10" y="2" width="1" height="1" fill="#60A5FA" />
+  <rect x="13" y="2" width="1" height="1" fill="#60A5FA" />
+
+  <!-- legs frame 1 -->
+  <rect x="5" y="8" width="1" height="2" fill="#93C5FD" />
+  <rect x="8" y="8" width="1" height="2" fill="#93C5FD" />
+  <rect x="11" y="7" width="1" height="3" fill="#93C5FD" />
+  <rect x="13" y="7" width="1" height="2" fill="#93C5FD" />
+
+  <!-- eye -->
+  <rect x="12" y="4" width="1" height="1" fill="#0B0F14" />
+</svg>
