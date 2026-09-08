@@ -97,7 +97,7 @@ const scrollToTop = () => {
                 </div>
 
                 <!-- Contact -->
-                <a href="mailto:your-address@example.com" class="
+                <a href="mailto:mail@shiomiolog.com" class="
                         footer-contact
                         mt-6
                         inline-flex
