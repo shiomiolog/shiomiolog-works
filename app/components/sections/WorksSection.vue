@@ -15,7 +15,7 @@ const closeWork = () => {
 </script>
 
 <template>
-    <section id="works" class="bg-white px-6 pt-22 pb-22 md:px-10 md:pt-20 md:pb-20">
+    <section id="works" class="bg-white section-panel px-6 pt-22 pb-22 md:px-10 md:pt-20 md:pb-20">
         <div class="mx-auto max-w-7xl">
             <div class="mb-10 text-center">
                 <h2 class="text-center">

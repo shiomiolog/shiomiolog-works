@@ -1,8 +1,10 @@
 <script setup lang="ts">
+const { target, isVisible } = useReveal()
 </script>
 
 <template>
-    <section id="vtuber" class="relative overflow-hidden bg-[#f9f9f9] px-6 py-10 md:px-10 md:py-14">
+    <section id="vtuber" ref="target"
+        class="relative overflow-hidden bg-[#f9f9f9] section-panel px-6 py-10 md:px-10 md:py-14">
         <!-- Background paws -->
         <div class="pointer-events-none absolute inset-0 overflow-hidden">
             <div class="paw paw-1">🐾</div>
@@ -11,11 +13,13 @@
         </div>
 
         <div class="relative z-10 mx-auto max-w-7xl">
-            <div class="mb-10 text-center">
+            <div class="mb-10 text-center transition-all duration-700 ease-out" :class="isVisible
+                ? 'translate-y-0 opacity-100'
+                : 'translate-y-6 opacity-0'
+                ">
                 <h2 class="text-center">
-                    <img src="/images/logo/STUDIO.png" alt="STUDIO" class="mx-auto w-48 h-auto md:w-64">
+                    <img src="/images/logo/STUDIO.png" alt="STUDIO" class="mx-auto h-auto w-48 md:w-64">
                 </h2>
-
 
                 <p class="mt-3 text-sm tracking-[0.12em] text-slate-400">
                     配信とものづくり
@@ -23,7 +27,10 @@
             </div>
             <div class="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
                 <!-- Text -->
-                <div>
+                <div class="transition-all duration-700 ease-out" :class="isVisible
+                    ? 'translate-x-0 opacity-100 delay-100'
+                    : '-translate-x-6 opacity-0'
+                    ">
 
                     <p class="mt-6 max-w-2xl text-base leading-8 text-slate-600 md:text-lg">
                         個人勢VTuber「汐猫みお」として活動しています。
@@ -97,15 +104,15 @@
                     bg-gradient-to-br from-blue-50 to-sky-100
                     p-8
                     shadow-[0_10px_28px_rgba(15,23,42,0.06)]
-                ">
+                    transition-all duration-700 ease-out
+                " :class="isVisible
+                    ? 'translate-x-0 opacity-100 delay-200'
+                    : 'translate-x-6 opacity-0'
+                    ">
                     <div class="text-center">
-                        <div class="text-6xl" aria-hidden="true">
-                            🐾
+                        <div class="mt-4 text-sm text-slate-400">
+                            <img src="/images/shiomiolog.png" alt="汐猫みお">
                         </div>
-
-                        <p class="mt-4 text-sm text-slate-400">
-                            ここに3DモデルやVTuber画像を配置
-                        </p>
                     </div>
                 </div>
             </div>

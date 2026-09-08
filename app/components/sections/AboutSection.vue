@@ -68,7 +68,8 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-    <section id="about" ref="aboutSection" class="bg-[#f0f0f0] px-10 pt-20 pb-20 md:px-10 md:pt-24 md:pb-24">
+    <section id="about" ref="aboutSection"
+        class="bg-[#f9f9f9] section-panel px-10 pt-20 pb-20 md:px-10 md:pt-24 md:pb-24">
         <div class="mx-auto max-w-7xl">
             <div class="grid gap-8 transition-all duration-700 ease-out lg:grid-cols-[0.9fr_1.1fr]" :class="isVisible
                 ? 'translate-y-0 opacity-100'
@@ -100,6 +101,9 @@ onBeforeUnmount(() => {
                         <p>
                             技術と法制度の両面から、
                             情報通信やデジタル社会について考えています。
+                        </p>
+                        <p>
+                            女です。VTuber活動もしています。
                         </p>
                     </div>
 

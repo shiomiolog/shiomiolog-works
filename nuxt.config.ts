@@ -8,6 +8,10 @@ export default defineNuxtConfig({
     '@nuxt/icon',
   ],
 
+  css: [
+    '~/assets/css/main.css',
+  ],
+
   components: [
     {
       path: '~/components',

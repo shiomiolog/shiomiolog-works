@@ -7,7 +7,7 @@ const scrollToWorks = () => {
 </script>
 
 <template>
-    <section class="relative flex min-h-[100svh] items-center overflow-hidden bg-[#f9f9f9] px-6 md:px-10">
+    <section class="section-panel relative flex min-h-[100svh] items-center overflow-hidden bg-[#f9f9f9] px-6 md:px-10">
         <!-- Decorative background -->
         <div class="pointer-events-none absolute inset-0">
             <div class="hero-dots absolute inset-0" />
@@ -15,16 +15,11 @@ const scrollToWorks = () => {
             <div class="hero-blob hero-blob-one" />
             <div class="hero-blob hero-blob-two" />
 
-            <!-- paw marks -->
             <div class="paw paw-one absolute left-[8%] top-[18%] text-4xl text-blue-200/50">
                 🐾
             </div>
 
-            <div class="paw paw-two absolute right-[12%] top-[24%] text-3xl text-blue-200/40">
-                🐾
-            </div>
-
-            <div class="paw paw-three absolute right-[24%] bottom-[24%] text-2xl text-blue-200/30">
+            <div class="paw paw-three absolute bottom-[24%] right-[24%] text-2xl text-blue-200/30">
                 🐾
             </div>
         </div>
@@ -32,7 +27,7 @@ const scrollToWorks = () => {
         <!-- Main content -->
         <div class="relative z-10 mx-auto w-full max-w-7xl">
             <div class="max-w-3xl">
-                <p class="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-blue-500">
+                <p class="hero-enter hero-enter-1 mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-blue-500">
                     Portfolio
                 </p>
 
@@ -40,19 +35,22 @@ const scrollToWorks = () => {
                     汐猫みお
                 </h1>
 
-                <img src="/images/logo/shiomio-sign.png" alt="汐猫みお" class="w-full max-w-[520px] md:max-w-[680px]">
+                <img src="/images/logo/shiomio-sign.png" alt="汐猫みお"
+                    class="hero-enter hero-logo hero-enter-2 w-full max-w-[520px] md:max-w-[680px]">
 
-                <p class="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 md:text-xl">
-                    研究、セキュリティ、情報法、
-                    開発と執筆。
-                </p>
+                <div class="mt-3 max-w-2xl">
+                    <p class="hero-note hero-enter hero-enter-3 text-xl leading-9 text-slate-600 md:text-2xl">
+                        <img src="/images/hero/text.png" alt="セキュリティや情報法を勉強しつつ、Webを作ったり、文章を書いたりしています。"
+                            class="inline-block w-full max-w-[300px] md:max-w-[500px]">
+                    </p>
 
-                <p class="mt-4 max-w-xl text-base leading-7 text-slate-500">
-                    技術と法を学びながら、Web開発や執筆、
-                    ものづくりをしています。
-                </p>
+                    <p class="hero-note-sub hero-enter hero-enter-4 mt-1 text-sm text-slate-400">
+                        <img src="/images/hero/text2.png" alt="たまに3Dモデルをいじったり、同人誌を書いたり。"
+                            class="inline-block w-full max-w-[250px] md:max-w-[400px]">
+                    </p>
+                </div>
 
-                <div class="mt-9 flex flex-wrap gap-4">
+                <div class="hero-enter hero-enter-5 mt-9 flex flex-wrap gap-4">
                     <button type="button"
                         class="rounded-full bg-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-600"
                         @click="scrollToWorks">
@@ -64,7 +62,17 @@ const scrollToWorks = () => {
                         GitHub
                     </a>
                 </div>
+
+                <!-- Mobile cat message -->
+                <div class="hero-enter hero-enter-6 mt-10 flex justify-center md:hidden">
+                    <CatMessage />
+                </div>
             </div>
+        </div>
+
+        <!-- Desktop cat message -->
+        <div class="hero-enter hero-enter-6 absolute bottom-24 right-[8%] z-20 hidden md:block">
+            <CatMessage />
         </div>
 
         <!-- Walking cat -->
@@ -79,13 +87,97 @@ const scrollToWorks = () => {
 </template>
 
 <style scoped>
+.hero-enter {
+    opacity: 0;
+    transform: translateY(18px);
+
+    animation: hero-enter 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-enter-1 {
+    animation-delay: 0.08s;
+}
+
+.hero-enter-2 {
+    animation-delay: 0.2s;
+}
+
+.hero-enter-3 {
+    animation-delay: 0.36s;
+}
+
+.hero-enter-4 {
+    animation-delay: 0.5s;
+}
+
+.hero-enter-5 {
+    animation-delay: 0.66s;
+}
+
+.hero-enter-6 {
+    animation-delay: 0.88s;
+}
+
+.hero-logo {
+    transform: translateY(22px) scale(0.97);
+
+    animation-name: hero-logo-enter;
+}
+
+@keyframes hero-logo-enter {
+    from {
+        opacity: 0;
+        transform: translateY(22px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes hero-enter {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-note {
+    font-family:
+        "Hiragino Maru Gothic ProN",
+        "Yu Gothic",
+        sans-serif;
+
+    letter-spacing: 0.04em;
+    transform: rotate(-0.7deg);
+}
+
+.hero-note-sub {
+    letter-spacing: 0.05em;
+    transform: rotate(0.5deg);
+}
+
 .hero-dots {
     background-image:
         radial-gradient(circle,
             rgba(96, 165, 250, 0.18) 1.5px,
             transparent 1.5px);
+
     background-size: 32px 32px;
-    mask-image: linear-gradient(to bottom,
+
+    mask-image:
+        linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.8),
+            transparent 90%);
+
+    -webkit-mask-image:
+        linear-gradient(to bottom,
             rgba(0, 0, 0, 0.8),
             transparent 90%);
 }
@@ -121,15 +213,19 @@ const scrollToWorks = () => {
     position: relative;
     width: 64px;
     height: 48px;
+
     image-rendering: pixelated;
+
     animation: cat-bob 0.6s steps(1) infinite;
 }
 
 .cat-frame {
     position: absolute;
     inset: 0;
+
     width: 64px;
     height: 48px;
+
     image-rendering: pixelated;
 }
 
@@ -189,25 +285,12 @@ const scrollToWorks = () => {
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-
-    .cat-walk,
-    .cat-sprite,
-    .cat-frame-a,
-    .cat-frame-b {
-        animation: none;
-    }
-}
-
 .paw {
     animation:
         paw-rotate 12s linear infinite,
         paw-float 4s ease-in-out infinite;
-    transform-origin: center;
-}
 
-.paw-two {
-    animation-duration: 16s, 5s;
+    transform-origin: center;
 }
 
 .paw-three {
@@ -237,7 +320,16 @@ const scrollToWorks = () => {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
+    .hero-enter,
+    .hero-logo,
+    .cat-walk,
+    .cat-sprite,
+    .cat-frame-a,
+    .cat-frame-b,
     .paw {
+        opacity: 1;
+        transform: none;
         animation: none;
     }
 }

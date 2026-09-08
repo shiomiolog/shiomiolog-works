@@ -14,6 +14,7 @@ const navItems = [
       border-b border-slate-200/50
       bg-white/90
       backdrop-blur-md
+      shadow-[0_8px_24px_rgba(15,23,42,0.05)]
     ">
         <div class="
         mx-auto flex h-16 max-w-7xl

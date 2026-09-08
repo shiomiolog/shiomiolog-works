@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { target, isVisible } = useReveal();
+
 const certifications = [
     {
         date: '2019.03',
@@ -50,8 +52,11 @@ const contests = [
 </script>
 
 <template>
-    <section id="experience" class="bg-[#f9f9f9] px-6 py-10 md:px-10 md:py-14">
-        <div class="mx-auto max-w-7xl">
+    <section id="experience" ref="target" class="bg-[#f9f9f9] section-panel px-6 py-10 md:px-10 md:py-14">
+        <div class="mx-auto max-w-7xl transition-all duration-700 ease-out" :class="isVisible
+            ? 'translate-y-0 opacity-100'
+            : 'translate-y-8 opacity-0'
+            ">
             <!-- Heading -->
             <div class="mb-10 text-center">
                 <h2 class="sr-only">

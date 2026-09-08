@@ -4,8 +4,8 @@ html {
 
 body {
     margin: 0;
-    background: #0b0f14;
-    color: #f8fafc;
+    background: #fffdfb;
+    color: #334155;
 }
 
 html,
@@ -13,14 +13,48 @@ body {
     overflow-x: clip;
 }
 
-.font-mono-system {
-    font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Monaco,
-        Consolas,
-        "Liberation Mono",
-        "Courier New",
-        monospace;
+.section-panel {
+    position: relative;
+    z-index: 1;
+
+    box-shadow:
+        0 12px 30px rgba(100, 116, 139, 0.035),
+        0 2px 8px rgba(59, 130, 246, 0.025);
+}
+
+.soft-card {
+    border-radius: 2rem 1.6rem 2.2rem 1.7rem;
+}
+
+.soft-card:nth-child(2n) {
+    border-radius: 1.7rem 2.1rem 1.8rem 2.2rem;
+}
+
+.soft-card:nth-child(3n) {
+    border-radius: 2.2rem 1.8rem 2rem 1.6rem;
+}
+
+.paw-trail {
+    position: fixed;
+    z-index: 9999;
+
+    width: 22px;
+    height: 22px;
+
+    pointer-events: none;
+
+    background: #7db7e8;
+
+    mask: url('/images/effects/paw.svg') center / contain no-repeat;
+    -webkit-mask: url('/images/effects/paw.svg') center / contain no-repeat;
+
+    opacity: 0;
+
+    transition:
+        opacity 0.45s ease,
+        transform 0.6s ease;
+}
+
+.paw-trail-visible {
+    opacity: 0.18;
 }
